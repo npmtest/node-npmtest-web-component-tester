@@ -1,1 +1,39 @@
-{     "devDependencies": {         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-web-component-tester",     "homepage": "https://github.com/npmtest/node-npmtest-web-component-tester",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-web-component-tester.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### basic test coverage for  [web-component-tester (v5.0.1)](https://github.com/Polymer/web-component-tester)  [![npm package](https://img.shields.io/npm/v/npmtest-web-component-tester.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-web-component-tester) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-web-component-tester.svg)](https://travis-ci.org/npmtest/node-npmtest-web-component-tester)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-web-component-tester",
+    "keywords": [
+        "coverage",
+        "test",
+        "web-component-tester"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_web_component_tester.js",
+    "name": "npmtest-web-component-tester",
+    "nameAlias": "npmtest_web_component_tester",
+    "nameOriginal": "npmtest-web-component-tester",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-web-component-tester.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
